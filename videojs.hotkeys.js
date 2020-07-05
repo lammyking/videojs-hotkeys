@@ -134,7 +134,7 @@
         // Don't catch keys if any control buttons are focused, unless alwaysCaptureHotkeys is true
         var activeEl = doc.activeElement;
         if (
-          alwaysCaptureHotkeys ||
+          (alwaysCaptureHotkeys && documentHotkeysFocusElementFilter(activeEl)) ||
           (captureDocumentHotkeys && documentHotkeysFocusElementFilter(activeEl)) ||
 
           activeEl == pEl ||
